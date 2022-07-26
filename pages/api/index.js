@@ -5,6 +5,10 @@ export async function getAllBlogPosts() {
   return fetchGet(`${API_BASE_URL}/blog/`);
 }
 
-export async function likeBlogPost(blogId) {
-  return fetchPost(`${API_BASE_URL}/blog/like/`, {id: blogId});
+export async function createBlogPost(title, content) {
+  return fetchPost(`${API_BASE_URL}/blog/`, { title: title, content: content });
+}
+
+export async function likeBlogPost(id) {
+  return fetchPost(`${API_BASE_URL}/blog/like/`, { id: id });
 }
