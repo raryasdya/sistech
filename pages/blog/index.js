@@ -128,7 +128,7 @@ export default function Index() {
         <h1 className={styles.title}>
           Blog
         </h1>
-        <div class="mb-4 d-flex align-items-center justify-content-end">
+        <div className="mb-4 d-flex align-items-center justify-content-end">
           <Button className="d-flex align-items-center" onClick={() => setModalCreateShow(true)} style={{ backgroundColor: "#83a484" }}>
             <div className='my-0 mx-1'>
               <Icon icon="akar-icons:plus" width='20px' />
