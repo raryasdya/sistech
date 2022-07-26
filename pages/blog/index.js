@@ -1,9 +1,10 @@
-import { Button, Form, Modal } from "react-bootstrap";
+import { Button, Card, Form, Modal } from "react-bootstrap";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
 import { createBlogPost, getAllBlogPosts, likeBlogPost, updateBlogPost } from "../api";
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Blog.module.css'
+import { Icon } from "@iconify/react";
 
 function FormCreateModal(props) {
 
@@ -23,14 +24,14 @@ function FormCreateModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Create New Blog Post
+          Add New Blog Post
         </Modal.Title>
       </Modal.Header>
       <Form onSubmit={onCreatePost}>
         <Modal.Body>
           <Form.Group className="mb-3" controlId="titleInput">
             <Form.Label>Title</Form.Label>
-            <Form.Control type="type" placeholder="Enter title" required />
+            <Form.Control type="type" placeholder="Enter Title" required />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="contentInput">
@@ -40,7 +41,7 @@ function FormCreateModal(props) {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button type="submit">Post</Button>
+          <Button type="submit" style={{ backgroundColor: "#83a484" }}>Post</Button>
         </Modal.Footer>
       </Form>
     </Modal>
@@ -87,7 +88,7 @@ function FormUpdateModal(props) {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button type="submit">Edit</Button>
+          <Button type="submit" style={{ backgroundColor: "#83a484" }}>Edit</Button>
         </Modal.Footer>
       </Form>
     </Modal>
@@ -118,32 +119,50 @@ export default function Index() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className='my-5'>
       <Head>
-        <title>Blog Posts</title>
+        <title>Blog</title>
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
           Blog
         </h1>
-
-        <Button onClick={() => setModalCreateShow(true)}> Create New Post</Button>
+        <div class="mb-4 d-flex align-items-center justify-content-end">
+          <Button className="d-flex align-items-center" onClick={() => setModalCreateShow(true)} style={{ backgroundColor: "#83a484" }}>
+            <div className='my-0 mx-1'>
+              <Icon icon="akar-icons:plus" width='20px' />
+            </div>
+            <div className='my-0 mx-1 d-flex'>
+              Add Post
+            </div>
+          </Button>
+        </div>
 
         <div className={styles.grid}>
           {blogPosts.map(post => {
             return (
-              <div key={post.id} className={styles.card}>
-                <h2>{post.title}</h2>
-                <p>{post.content}</p>
-                <p>{post.like}</p>
-                <Button onClick={() => handlePostLike(post.id)}> Like! </Button>
-                <Button onClick={() => handlePostEditButton(post)}> Edit </Button>
-              </div>
+              <Card key={post.id} className={`m-3 col-sm-3 col-md-3 ${styles.classCard}`}>
+                <Card.Header>
+                  <Card.Title className='text-center'>
+                    {post.title}
+                    <Icon className={styles.blogIcon} onClick={() => handlePostEditButton(post)} icon="bxs:pencil" />
+                  </Card.Title>
+                </Card.Header>
+                <Card.Body className={styles.cardBody}>
+                  <Card.Text>{post.content}</Card.Text>
+                </Card.Body>
+                <Card.Footer className={styles.blogFooter}>
+                  <Card.Subtitle>
+                    {post.like} Like(s)
+                  </Card.Subtitle>
+                  <Icon className={styles.blogIcon} onClick={() => handlePostLike(post.id)} icon="heroicons-solid:thumb-up" color="#83a484" />
+                </Card.Footer>
+              </Card>
             )
           })}
         </div>
-      </main>
+      </main >
 
       <FormCreateModal
         show={modalCreateShow}
@@ -157,7 +176,6 @@ export default function Index() {
         onHide={() => { setModalUpdateShow(false) }}
         data={selectedData}
       />
-
-    </div>
+    </div >
   )
 }
