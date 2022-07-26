@@ -29,15 +29,6 @@
   flex-grow: 1;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
 .grid {
   display: flex;
   align-items: center;
@@ -48,11 +39,6 @@
   align-items: stretch;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -61,13 +47,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
@@ -84,8 +73,8 @@
 }
 
 .title {
-  margin-bottom: 1.5rem;
   font-size: 4rem;
+  padding-bottom: 0.25em;
 }
 
 .title,
@@ -95,9 +84,10 @@
 }
 
 .subtitle {
-  margin: 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+  padding: 0.5em;
+  line-height: 1.8;
+  font-size: 1.25em;
+  width: 75%;
 }
 
 .work {
