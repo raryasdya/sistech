@@ -11,7 +11,7 @@ import { Icon } from '@iconify/react'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Home</title>
       </Head>
@@ -101,6 +101,6 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}> <small> <i> end of file </i> </small> </footer>
-    </div >
+    </>
   )
 }
