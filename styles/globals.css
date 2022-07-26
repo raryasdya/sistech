@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #9dbf9e;
   text-decoration: none;
 }
 
@@ -23,4 +23,12 @@ a {
     color: white;
     background: black;
   }
+}
+
+section {
+  padding: 10px;
+  width: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }

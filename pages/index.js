@@ -18,10 +18,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <section className={styles.cover}>
-          <h1 className={styles.title}>Hi, I'm Fairuza</h1>
+          <h1 className={styles.title}>Hi, I&apos;m Fairuza</h1>
           <div className={styles.subtitle}>
             {contact.map((data, index) =>
-              <a className='p-2' target='_blank' href={data.link} key={index}>
+              <a className='p-2' target='_blank' rel="noreferrer" href={data.link} key={index}>
                 <Icon icon={`ant-design:${data.name}-outlined`} color="#4b514a" width="40" />
               </a>
             )}
@@ -45,7 +45,7 @@ export default function Home() {
                   <h4 className='mt-1'> <a href={data.companyLink} style={{ color: '#83a484' }}> {data.company} </a></h4>
                   <hr></hr>
                   {data.details.map((detail, detailIndex) =>
-                    <div key={detailIndex} className={styles.timelineText}> > {HTMLReactParser(detail)} </div>
+                    <div key={detailIndex} className={styles.timelineText}> &#62; {HTMLReactParser(detail)} </div>
                   )}
                   <hr></hr>
                   <p className="vertical-timeline-element-subtitle text-muted">{data.stacks.join(" - ")}</p>
@@ -87,7 +87,7 @@ export default function Home() {
                   <h4 className="vertical-timeline-element-title">{data.role}, {data.organization} </h4>
                   <hr></hr>
                   {data.details.map((detail, detailIndex) =>
-                    <div key={detailIndex} className={styles.timelineText}> > {HTMLReactParser(detail)} </div>
+                    <div key={detailIndex} className={styles.timelineText}> &#62; {HTMLReactParser(detail)} </div>
                   )}
                   <hr className="mb-2"></hr>
                 </>
@@ -99,12 +99,7 @@ export default function Home() {
 
       </main>
 
-      <footer className={styles.footer}>
-        end
-        {/* <span className={styles.logo}>
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </span> */}
-      </footer>
+      <footer className={styles.footer}> <small> <i> end of file </i> </small> </footer>
     </div >
   )
 }
