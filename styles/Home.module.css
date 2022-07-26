@@ -39,10 +39,23 @@
   align-items: stretch;
 }
 
+.cover {
+  padding: 2em 0.5em 2em 0.5em;
+  background-color: #9caca5;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
-    flex-direction: column;
+  }
+
+  .cover {
+    height: 100vh;
   }
 }
 
@@ -60,16 +73,6 @@
   .logo img {
     filter: invert(1);
   }
-}
-
-.cover {
-  padding: 2em 0.5em 2em 0.5em;
-  background-color: #9caca5;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .title {

@@ -19,7 +19,7 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.cover}>
           <h1 className={styles.title}>Hi, I&apos;m Fairuza</h1>
-          <div className={styles.subtitle}>Fe for short and Fairuza Raryasdya Ayunda for long. I&apos;m currently entering my final year <br></br>on pursuing Bachelor of Computer Science in University of Indonesia.</div>
+          <div className={styles.subtitle}>Fe for short and Fairuza Raryasdya Ayunda for long. I&apos;m currently entering my final year on pursuing Bachelor Degree of Computer Science in University of Indonesia.</div>
           <div className={styles.subtitle}>
             {contact.map((data, index) =>
               <a className='p-2' target='_blank' rel="noreferrer" href={data.link} key={index}>
